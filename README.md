@@ -1,0 +1,33 @@
+Проект с курса 2.Джуниор от Job4j.ru
+
+На курсе изучу:
+ - Maven;
+ - AssertJ;
+ - Iterator;
+ - Generic;
+ - List;
+ - Set;
+ - Map;
+ - Tree;
+ - Ввод - Вывод:
+ - Socket;
+ - Логгирование;
+ - Сериализация;
+ - Натройка PostgreSQL;
+ - Create Uptade Insert;
+ - Query;
+ - Outer join;
+ - Объекты Базы Данных;
+ - JDBC;
+ - Liquidbase;
+ - Проект. Агрегатор Java вакансий;
+ - Сборщик мусора;
+ - Профилирование приложения
+ - Типы ссылок и коллекций на Soft weak ссылках;
+ - Java Memory Model
+ - TDD;
+ - SRP;
+ - OCP;
+ - LSP;
+ - ISP;
+ - DIP.
