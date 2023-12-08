@@ -8,7 +8,7 @@ class ArrayItTest {
 
     @Test
     void whenMultiCallHasNextThenTrue() {
-        ArrayIt iterator = new ArrayIt (
+        ArrayIt iterator = new ArrayIt(
                 new int[] {1, 2, 3}
         );
         boolean result = iterator.hasNext();
@@ -17,7 +17,7 @@ class ArrayItTest {
 
     @Test
     void whenReadSequence() {
-        ArrayIt iterator = new ArrayIt (
+        ArrayIt iterator = new ArrayIt(
                 new int[] {1, 2, 3}
         );
         assertThat(iterator.next()).isEqualTo(1);
