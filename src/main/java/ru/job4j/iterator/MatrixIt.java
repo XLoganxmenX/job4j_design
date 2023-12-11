@@ -5,8 +5,8 @@ import java.util.NoSuchElementException;
 
 public class MatrixIt implements Iterator<Integer> {
     private final int[][] data;
-    private int row = 0;
     private int column = 0;
+    private int row = 0;
 
     public MatrixIt(int[][] data) {
         this.data = data;
@@ -14,13 +14,11 @@ public class MatrixIt implements Iterator<Integer> {
 
     @Override
     public boolean hasNext() {
-        while (column < data.length
-                && (data[column].length == 0 || row == data[column].length)) {
-            column++;
-            row = 0;
+        while (row < data.length && column == data[row].length) {
+            row++;
+            column = 0;
         }
-        return column < data.length
-                && row < data[column].length;
+        return row < data.length;
     }
 
     @Override
@@ -28,6 +26,6 @@ public class MatrixIt implements Iterator<Integer> {
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-        return data[column][row++];
+        return data[row][column++];
     }
 }
