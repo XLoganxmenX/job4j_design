@@ -10,7 +10,7 @@ public class SimpleLinkedList<E> implements SimpleLinked<E> {
     private int size;
     private int modCount;
     private Node<E> head;
-
+    private Node<E> last;
 
     @Override
     public void add(E value) {
@@ -18,15 +18,10 @@ public class SimpleLinkedList<E> implements SimpleLinked<E> {
 
         if (size == 0) {
             head = newNode;
+            last = newNode;
         } else {
-            Node<E> node = head;
-            for (int i = 0; i < size; i++) {
-                if (node.next == null) {
-                    node.next = newNode;
-                    break;
-                }
-                node = node.next;
-            }
+            last.next = newNode;
+            last = newNode;
         }
 
         size++;
@@ -66,10 +61,10 @@ public class SimpleLinkedList<E> implements SimpleLinked<E> {
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                E returnNode = cursor.item;
+                E returnNodeNum = cursor.item;
                 cursor = cursor.next;
 
-                return returnNode;
+                return returnNodeNum;
             }
         };
     }
@@ -82,15 +77,5 @@ public class SimpleLinkedList<E> implements SimpleLinked<E> {
             this.item = element;
             this.next = next;
         }
-    }
-
-    public static void main(String[] args) {
-        SimpleLinked<Integer> list = new SimpleLinkedList<>();
-
-        Iterator<Integer> iterator = list.iterator();
-        System.out.println(iterator.next());
-        System.out.println(iterator.next());
-        System.out.println(iterator.next());
-
     }
 }
