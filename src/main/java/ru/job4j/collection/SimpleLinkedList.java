@@ -10,18 +10,19 @@ public class SimpleLinkedList<E> implements SimpleLinked<E> {
     private int size;
     private int modCount;
     private Node<E> head;
-    private Node<E> last;
 
     @Override
     public void add(E value) {
         Node<E> newNode = new Node<>(value, null);
 
+        Node<E> node = head;
         if (size == 0) {
             head = newNode;
-            last = newNode;
         } else {
-            last.next = newNode;
-            last = newNode;
+            for (int i = 0; i < size - 1; i++) {
+                node = node.next;
+            }
+            node.next = newNode;
         }
 
         size++;
@@ -31,13 +32,12 @@ public class SimpleLinkedList<E> implements SimpleLinked<E> {
     @Override
     public E get(int index) {
         Objects.checkIndex(index, size);
+
         Node<E> node = head;
         for (int i = 0; i < index; i++) {
-            if (node.next == null) {
-                break;
-            }
             node = node.next;
         }
+
         return node.item;
     }
 
