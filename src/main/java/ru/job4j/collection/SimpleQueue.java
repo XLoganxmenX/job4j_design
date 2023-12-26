@@ -22,11 +22,8 @@ public class SimpleQueue<T> {
             }
         }
 
-        T returnVal = null;
-        if (outSize != 0) {
-            returnVal = out.pop();
-            outSize--;
-        }
+        T returnVal = out.pop();
+        outSize--;
 
         return returnVal;
     }
