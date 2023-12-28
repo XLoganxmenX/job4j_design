@@ -36,7 +36,6 @@ public class RevertLinked<T> implements Iterable<T> {
                 cursor = nextNode;
             }
             head = prevNode;
-            rsl  = true;
         }
 
         return rsl;
