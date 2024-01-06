@@ -1,7 +1,5 @@
 package ru.job4j.map;
 
-import ru.job4j.collection.SimpleLinkedList;
-
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;

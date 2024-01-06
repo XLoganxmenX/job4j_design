@@ -150,7 +150,7 @@ class NonCollisionMapTest {
         assertThat(map.put(0, "0")).isTrue();
         assertThat(map.get(null)).isNull();
     }
-    /////////////////////////////////////////////////
+
     @Test
     void whenPutNegativeKey() {
         assertThat(map.put(-1, "-1")).isTrue();
