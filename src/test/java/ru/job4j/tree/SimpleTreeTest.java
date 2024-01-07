@@ -19,6 +19,12 @@ public class SimpleTreeTest {
     }
 
     @Test
+    void whenParentEqualsChildThenNotAdd() {
+        Tree<Integer> tree = new SimpleTree<>(1);
+        assertThat(tree.add(1, 1)).isFalse();
+    }
+
+    @Test
     void whenTreeOfObjectsAndAddObject() {
         Object parentObj = new Object();
         Object childrenObj = new Object();
@@ -61,9 +67,4 @@ public class SimpleTreeTest {
         assertThat(tree.add(2, 6)).isFalse();
     }
 
-    @Test
-    void whenParentEqualsChildThenNotAdd() {
-        Tree<Integer> tree = new SimpleTree<>(1);
-        assertThat(tree.add(1, 1)).isFalse();
-    }
 }
