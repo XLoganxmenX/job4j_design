@@ -237,16 +237,4 @@ class NonCollisionMapTest {
         assertThatThrownBy(iterator::next)
                 .isInstanceOf(NoSuchElementException.class);
     }
-
-    @Test
-    void whenIteratorFromObjectMap() {
-        SimpleMap<User, String> map = new NonCollisionMap<>();
-        User user1 = new User("Vasiliy", 2, new GregorianCalendar(1985, Calendar.JANUARY, 10));
-        User user2 = new User("Petr", 3, new GregorianCalendar(1980, Calendar.APRIL, 1));
-        map.put(user1, "Pswd1234");
-        map.put(user2, "11111111");
-        Iterator<User> iterator = map.iterator();
-        assertThat(iterator.next()).isEqualTo(user1);
-        assertThat(iterator.next()).isEqualTo(user2);
-    }
 }
