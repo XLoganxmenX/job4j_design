@@ -34,6 +34,5 @@ public class ByteArrayStream {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }
