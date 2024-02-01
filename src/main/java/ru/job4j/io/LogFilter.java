@@ -40,7 +40,7 @@ public class LogFilter {
                         new FileWriter(out)
                 ))) {
             for (String line : data) {
-                output.printf("%s%n", line);
+                output.println(line);
             }
         } catch (IOException e) {
             e.printStackTrace();
