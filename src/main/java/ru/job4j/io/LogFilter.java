@@ -25,8 +25,6 @@ public class LogFilter {
                     outputList.add(line);
                 }
             }
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
