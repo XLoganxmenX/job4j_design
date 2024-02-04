@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.*;
 class ConfigTest {
     @Test
     void whenPairWithoutComment() {
-        String path = "./data/pair_without_comment.properties";
+        String path = "Data/pair_without_comment.properties";
         Config config = new Config(path);
         config.load();
         assertThat(config.value("name")).isEqualTo("Dmitriy Avdoshin");
@@ -14,7 +14,7 @@ class ConfigTest {
 
     @Test
     void whenPairsWithCommentAndSkips() {
-        String path = "./data/pair_with_comment_skips.properties";
+        String path = "Data/pair_with_comment_skips.properties";
         Config config = new Config(path);
         config.load();
         assertThat(config.value("id")).isEqualTo("100");
@@ -24,28 +24,28 @@ class ConfigTest {
 
     @Test
     void whenNoKeyAndNoValue() {
-        String path = "./data/when_NoKey_NoValue.properties";
+        String path = "Data/when_NoKey_NoValue.properties";
         Config config = new Config(path);
         assertThatThrownBy(config::load).isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
     void whenKeyAndNoValue() {
-        String path = "./data/when_Key_NoValue.properties";
+        String path = "Data/when_Key_NoValue.properties";
         Config config = new Config(path);
         assertThatThrownBy(config::load).isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
     void whenNoKeyAndValue() {
-        String path = "./data/when_Key_NoValue.properties";
+        String path = "Data/when_Key_NoValue.properties";
         Config config = new Config(path);
         assertThatThrownBy(config::load).isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
     void whenMoreThenOneEquals() {
-        String path = "./data/when_More_Then_One_Equals.properties";
+        String path = "Data/when_More_Then_One_Equals.properties";
         Config config = new Config(path);
         config.load();
         assertThat(config.value("key")).isEqualTo("value=1");
@@ -54,7 +54,7 @@ class ConfigTest {
 
     @Test
     void whenValidConfig() {
-        String path = "./data/app.properties";
+        String path = "Data/app.properties";
         Config config = new Config(path);
         config.load();
         assertThat(config.value("hibernate.dialect"))
