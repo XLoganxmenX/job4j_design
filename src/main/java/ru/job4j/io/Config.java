@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.stream.Collectors;
 
 public class Config {
 
@@ -16,26 +15,41 @@ public class Config {
     }
 
     public void load() {
-        List<String> list;
         try (BufferedReader input = new BufferedReader(new FileReader(path))) {
-            list = input.lines()
+            input.lines()
                     .filter(line -> line.length() > 0 && !line.startsWith("#"))
-                    .collect(Collectors.toList());
-            for (String line : list) {
-                if (line.contains("#")) {
-                    line = line.substring(0, line.indexOf("#"));
-                }
-
-                if (line.matches(".+={1}.+")) {
-                    String[] word = line.split("=", 2);
-                    values.put(word[0].trim(), word[1].trim());
-                } else if (line.trim().length() > 0) {
-                    throw new IllegalArgumentException();
-                }
-            }
+                    .map(this::normalize)
+                    .filter(this::isMatch)
+                    .forEach(line -> {
+                        if (line.trim().length() > 0) {
+                            String[] word = line.split("=", 2);
+                            if (word.length == 2) {
+                                values.put(word[0].trim(), word[1].trim());
+                            }
+                        }
+                    });
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private String normalize(String line) {
+        if (line.contains("#")) {
+            line = line.substring(0, line.indexOf("#"));
+        }
+        return line;
+    }
+
+    private boolean isMatch(String line) {
+        boolean result = false;
+
+        if (line.matches(".+={1}.+")) {
+            result = true;
+        } else if (line.trim().length() > 0) {
+            throw new IllegalArgumentException();
+        }
+
+        return result;
     }
 
     public String value(String key) {
