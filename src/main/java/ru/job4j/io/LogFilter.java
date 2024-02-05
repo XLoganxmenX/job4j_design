@@ -1,12 +1,8 @@
 package ru.job4j.io;
 
-import ru.job4j.generics.Predator;
-
 import java.io.*;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class LogFilter {
     private final String file;
@@ -21,7 +17,7 @@ public class LogFilter {
         try (BufferedReader input = new BufferedReader(new FileReader(file))) {
             for (String line : input.lines().toList()) {
                 String[] word = line.split("\\W+");
-                if (word[word.length - 2].equals(MESSAGE)) {
+                if (MESSAGE.equals(word[word.length - 2])) {
                     outputList.add(line);
                 }
             }
