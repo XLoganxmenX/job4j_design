@@ -21,11 +21,9 @@ public class Config {
                     .map(this::normalize)
                     .filter(this::isMatch)
                     .forEach(line -> {
-                        if (line.trim().length() > 0) {
-                            String[] word = line.split("=", 2);
-                            if (word.length == 2) {
-                                values.put(word[0].trim(), word[1].trim());
-                            }
+                        String[] word = line.split("=", 2);
+                        if (word.length == 2) {
+                            values.put(word[0].trim(), word[1].trim());
                         }
                     });
         } catch (IOException e) {
@@ -37,15 +35,13 @@ public class Config {
         if (line.contains("#")) {
             line = line.substring(0, line.indexOf("#"));
         }
-        return line;
+        return line.trim();
     }
 
     private boolean isMatch(String line) {
-        boolean result = false;
+        boolean result = line.length() > 0;
 
-        if (line.matches(".+={1}.+")) {
-            result = true;
-        } else if (line.trim().length() > 0) {
+        if (result && !line.matches(".+={1}.+")) {
             throw new IllegalArgumentException();
         }
 
