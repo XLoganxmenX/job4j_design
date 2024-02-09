@@ -20,20 +20,15 @@ public class Analysis {
 
     private void printShutdownTime(String line, PrintWriter output) {
         String[] word = line.split(" ", 2);
-        StringBuilder builder = new StringBuilder();
 
         if (isSrvOnline && ("400".equals(word[0]) || "500".equals(word[0]))) {
             isSrvOnline = false;
-            builder.append(word[1]).append(";");
+            output.append(word[1]).append(";");
         }
 
         if (!isSrvOnline && ("200".equals(word[0]) || "300".equals(word[0]))) {
             isSrvOnline = true;
-            builder.append(word[1]).append(";").append(System.lineSeparator());
-        }
-
-        if (!builder.isEmpty()) {
-            output.print(builder);
+            output.append(word[1]).append(";").append(System.lineSeparator());
         }
     }
 
