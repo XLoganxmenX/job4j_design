@@ -14,7 +14,7 @@ public class Dir {
         System.out.println(String.format("size : %s", file.getTotalSpace()));
 
         for (File subfile : file.listFiles()) {
-            System.out.printf("%s : %s" + System.lineSeparator(), subfile.getName(), subfile.length());
+            System.out.printf("%s : %s%s", subfile.getName(), subfile.length(), System.lineSeparator());
         }
     }
 }
