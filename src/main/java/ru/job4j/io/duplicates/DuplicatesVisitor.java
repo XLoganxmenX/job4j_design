@@ -9,12 +9,13 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class DuplicatesVisitor extends SimpleFileVisitor<Path> {
 
-    Map<FileProperty, HashSet<Path>> fileMap = new HashMap<>();
+    Map<FileProperty, Set<Path>> fileMap = new HashMap<>();
 
-    public Map<FileProperty, HashSet<Path>> getFileMap() {
+    public Map<FileProperty, Set<Path>> getFileMap() {
         return fileMap;
     }
 
