@@ -23,9 +23,9 @@ public class ConsoleChat {
         List<String> wordsFromConsole = new LinkedList<>();
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
+        List<String> wordsFromFile = readPhrases();
 
         while (!OUT.equals(userInput)) {
-            List<String> wordsFromFile = readPhrases();
             userInput = scanner.nextLine();
             wordsFromConsole.add(userInput);
 
