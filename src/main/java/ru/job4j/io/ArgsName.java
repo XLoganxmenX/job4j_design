@@ -31,6 +31,10 @@ public class ArgsName {
     }
 
     private void validate(String arg) {
+        if (arg.length() == 0) {
+            throw new IllegalArgumentException(String.format("Arg %s is null. Enter correct arg", arg));
+        }
+
         if (!Pattern.matches("^(?!-=)^-+\\S+={1}\\S+", arg)) {
             if (!arg.startsWith("-")) {
                 throw new IllegalArgumentException(
