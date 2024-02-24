@@ -12,18 +12,14 @@ public class CSVReader {
     private static void argsCheck(String[] args) {
         if (args.length == 0) {
             throw new IllegalArgumentException("Arguments not passed to program");
-        } else if (args.length != 4) {
-            throw new IllegalArgumentException("Arguments must be 4");
         }
 
-        for (String arg : args) {
-            if (arg.length() == 0) {
-                throw new IllegalArgumentException(String.format("Arg %s is null. Enter correct arg", arg));
-            }
+        if (args.length != 4) {
+            throw new IllegalArgumentException("Arguments must be 4");
         }
     }
 
-    public static void validate(String path, String out) {
+    public static void validate(String path, String delimiter, String out, String filter) {
         if (!Files.exists(Paths.get(path))) {
             throw new IllegalArgumentException("File/directory of path not exist. Enter correct path");
         }
@@ -32,8 +28,16 @@ public class CSVReader {
             throw new IllegalArgumentException("Invalid file format of path");
         }
 
+        if (!Pattern.matches("\\W{1}", delimiter)) {
+            throw new IllegalArgumentException("Invalid format of delimiter");
+        }
+
         if (!(Pattern.matches(".+.csv", out)) && !("stdout".equals(out))) {
             throw new IllegalArgumentException("Invalid file format of out");
+        }
+
+        if (!Pattern.matches("\\S+", filter)) {
+            throw new IllegalArgumentException("Invalid format of filter");
         }
     }
 
@@ -48,7 +52,7 @@ public class CSVReader {
         String filter = argsName.get("filter");
         List<String> linesToPrint = new LinkedList<>();
 
-        validate(path, out);
+        validate(path, delimiter, out, filter);
 
 
         try (Scanner scanner = new Scanner(new BufferedReader(new FileReader(path)))) {
