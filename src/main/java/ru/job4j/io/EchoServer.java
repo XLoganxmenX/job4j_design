@@ -19,7 +19,6 @@ public class EchoServer {
                     if (firstHTTPMessage.contains("msg=Bye")) {
                         output.write("Close server\r\n".getBytes());
                         server.close();
-                        break;
                     }
 
                     for (String string = input.readLine(); string != null && !string.isEmpty(); string = input.readLine()) {
