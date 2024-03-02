@@ -9,6 +9,7 @@
                 <birthday>02.01.1980</birthday>
                 <job>CMO</job>
                 <experience>10</experience>
+                <married>true</married>
             </employee>
 
             <employee>
@@ -17,6 +18,7 @@
                 <birthday>18.11.1991</birthday>
                 <job>Manager</job>
                 <experience>4</experience>
+                <married>true</married>
             </employee>
 
             <employee>
@@ -25,6 +27,7 @@
                 <birthday>18.11.1993</birthday>
                 <job>Specialist</job>
                 <experience>2</experience>
+                <married>false</married>
             </employee>
         </employees>
     </marketing>
