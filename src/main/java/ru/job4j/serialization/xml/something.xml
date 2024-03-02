@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hr>
+    <marketing>
+        <employees>
+            <employee>
+                <person>Ivanov Fedor Petrovich</person>
+                <sex>Male</sex>
+                <birthday>02.01.1980</birthday>
+                <job>CMO</job>
+                <experience>10</experience>
+            </employee>
+
+            <employee>
+                <person>Fedotov Petr Ivanovich</person>
+                <sex>Male</sex>
+                <birthday>18.11.1991</birthday>
+                <job>Manager</job>
+                <experience>4</experience>
+            </employee>
+
+            <employee>
+                <person>Kazancev Oleg Olegovich</person>
+                <sex>Male</sex>
+                <birthday>18.11.1993</birthday>
+                <job>Specialist</job>
+                <experience>2</experience>
+            </employee>
+        </employees>
+    </marketing>
+</hr>
