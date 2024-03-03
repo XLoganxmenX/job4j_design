@@ -9,7 +9,7 @@ import java.net.Socket;
 
 public class EchoServer {
 
-    private static final Logger LOG = LoggerFactory.getLogger(UsageLog4j.class.getName());
+    private static final Logger LOG = LoggerFactory.getLogger(EchoServer.class.getName());
 
     private static void checkMessage(ServerSocket server, String message, OutputStream output) throws IOException {
         if (message.contains("msg=Hello")) {
