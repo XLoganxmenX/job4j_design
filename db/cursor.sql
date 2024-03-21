@@ -64,6 +64,8 @@ FETCH PRIOR c_products;
 
 FETCH PRIOR c_products;
 
+CLOSE c_products;
+
 commit;
 
 
