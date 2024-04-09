@@ -1,65 +1,43 @@
-[0.008s][info][gc] Using The Z Garbage Collector
-[0.136s][info][gc] GC(0) Garbage Collection (Warmup) 4M(17%)->4M(17%)
-[1.147s][info][gc] GC(1) Garbage Collection (Warmup) 6M(25%)->4M(17%)
-[3.539s][info][gc] GC(2) Garbage Collection (Warmup) 10M(42%)->8M(33%)
-[3.651s][info][gc] GC(3) Garbage Collection (Allocation Rate) 18M(75%)->8M(33%)
-[3.757s][info][gc] GC(4) Garbage Collection (Allocation Rate) 10M(42%)->8M(33%)
-[3.842s][info][gc] GC(5) Garbage Collection (Allocation Rate) 10M(42%)->8M(33%)
-[3.956s][info][gc] GC(6) Garbage Collection (Allocation Rate) 10M(42%)->10M(42%)
-[4.055s][info][gc] GC(7) Garbage Collection (Allocation Rate) 12M(50%)->10M(42%)
-[4.140s][info][gc] GC(8) Garbage Collection (Allocation Rate) 10M(42%)->8M(33%)
-[4.253s][info][gc] GC(9) Garbage Collection (Allocation Rate) 10M(42%)->8M(33%)
-[4.349s][info][gc] GC(10) Garbage Collection (Allocation Rate) 10M(42%)->10M(42%)
-[4.439s][info][gc] GC(11) Garbage Collection (Allocation Rate) 10M(42%)->8M(33%)
-[9.139s][info][gc] GC(12) Garbage Collection (Proactive) 12M(50%)->8M(33%)
-[18.154s][info][gc] GC(13) Garbage Collection (Proactive) 12M(50%)->8M(33%)
-[28.138s][info][gc] GC(14) Garbage Collection (Proactive) 12M(50%)->8M(33%)
-[28.977s][info][gc] GC(15) Garbage Collection (Proactive) 12M(50%)->8M(33%)
-[39.167s][info][gc] GC(16) Garbage Collection (Proactive) 12M(50%)->8M(33%)
-[51.146s][info][gc] GC(17) Garbage Collection (Proactive) 12M(50%)->8M(33%)
-[59.409s][info][gc] Allocation Stall (main) 12.479ms
-[59.410s][info][gc] GC(18) Garbage Collection (Allocation Stall) 24M(100%)->14M(58%)
-[59.431s][info][gc] Allocation Stall (main) 10.506ms
-[59.432s][info][gc] GC(19) Garbage Collection (Allocation Stall) 24M(100%)->14M(58%)
-[59.447s][info][gc] GC(20) Garbage Collection (Allocation Rate) 20M(83%)->18M(75%)
-[59.571s][info][gc] GC(21) Garbage Collection (Allocation Rate) 18M(75%)->8M(33%)
-[59.651s][info][gc] GC(22) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
-[59.774s][info][gc] GC(23) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
-[59.873s][info][gc] GC(24) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
-[59.965s][info][gc] GC(25) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
-[60.080s][info][gc] GC(26) Garbage Collection (Allocation Rate) 8M(33%)->10M(42%)
-[60.148s][info][gc] GC(27) Garbage Collection (Allocation Rate) 10M(42%)->8M(33%)
-[60.264s][info][gc] GC(28) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
-[60.475s][info][gc] GC(29) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
-[60.566s][info][gc] GC(30) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
-[60.680s][info][gc] GC(31) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
-[60.772s][info][gc] GC(32) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
-[60.874s][info][gc] GC(33) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
-[60.965s][info][gc] GC(34) Garbage Collection (Allocation Rate) 8M(33%)->8M(33%)
-[61.075s][info][gc] GC(35) Garbage Collection (Allocation Rate) 8M(33%)->10M(42%)
-[61.144s][info][gc] GC(36) Garbage Collection (Allocation Rate) 10M(42%)->10M(42%)
-[61.280s][info][gc] GC(37) Garbage Collection (Allocation Rate) 10M(42%)->10M(42%)
-[73.147s][info][gc] GC(38) Garbage Collection (Proactive) 14M(58%)->10M(42%)
-[84.173s][info][gc] GC(39) Garbage Collection (Proactive) 14M(58%)->10M(42%)
-[87.237s][info][gc] GC(40) Garbage Collection (Proactive) 14M(58%)->12M(50%)
-[113.166s][info][gc] GC(41) Garbage Collection (Proactive) 16M(67%)->10M(42%)
-[125.251s][info][gc] GC(42) Garbage Collection (Proactive) 14M(58%)->12M(50%)
-[154.250s][info][gc] GC(43) Garbage Collection (Proactive) 16M(67%)->12M(50%)
-[185.142s][info][gc] GC(44) Garbage Collection (Proactive) 16M(67%)->12M(50%)
-[214.774s][info][gc] GC(45) Garbage Collection (Proactive) 16M(67%)->8M(33%)
-[229.374s][info][gc] GC(46) Garbage Collection (Proactive) 12M(50%)->8M(33%)
-[242.365s][info][gc] GC(47) Garbage Collection (Proactive) 12M(50%)->8M(33%)
-[255.371s][info][gc] GC(48) Garbage Collection (Proactive) 12M(50%)->8M(33%)
-[270.379s][info][gc] GC(49) Garbage Collection (Proactive) 12M(50%)->8M(33%)
-[285.368s][info][gc] GC(50) Garbage Collection (Proactive) 12M(50%)->8M(33%)
-[300.365s][info][gc] GC(51) Garbage Collection (Proactive) 12M(50%)->8M(33%)
-[313.375s][info][gc] GC(52) Garbage Collection (Proactive) 12M(50%)->8M(33%)
-[328.378s][info][gc] GC(53) Garbage Collection (Proactive) 12M(50%)->8M(33%)
-[343.490s][info][gc] GC(54) Garbage Collection (Proactive) 12M(50%)->8M(33%)
-[356.479s][info][gc] GC(55) Garbage Collection (Proactive) 12M(50%)->8M(33%)
-[371.470s][info][gc] GC(56) Garbage Collection (Proactive) 12M(50%)->8M(33%)
-[386.482s][info][gc] GC(57) Garbage Collection (Proactive) 12M(50%)->8M(33%)
-[401.466s][info][gc] GC(58) Garbage Collection (Proactive) 12M(50%)->8M(33%)
-[416.482s][info][gc] GC(59) Garbage Collection (Proactive) 12M(50%)->8M(33%)
-[431.476s][info][gc] GC(60) Garbage Collection (Proactive) 12M(50%)->8M(33%)
-[446.449s][info][gc] GC(61) Garbage Collection (Proactive) 12M(50%)->8M(33%)
+[0.007s][info][gc] Using Serial
+[3.098s][info][gc] GC(0) Pause Young (Allocation Failure) 4M->2M(15M) 3.653ms
+[3.169s][info][gc] GC(1) Pause Young (Allocation Failure) 6M->2M(15M) 2.637ms
+[3.222s][info][gc] GC(2) Pause Young (Allocation Failure) 7M->4M(15M) 3.514ms
+[3.522s][info][gc] GC(3) Pause Young (Allocation Failure) 8M->4M(15M) 2.269ms
+[4.849s][info][gc] GC(4) Pause Young (Allocation Failure) 8M->5M(15M) 2.971ms
+[38.898s][info][gc] GC(5) Pause Young (Allocation Failure) 9M->5M(15M) 3.409ms
+[39.066s][info][gc] GC(6) Pause Young (Allocation Failure) 9M->6M(15M) 0.791ms
+[39.070s][info][gc] GC(7) Pause Young (Allocation Failure) 10M->6M(15M) 0.731ms
+[39.073s][info][gc] GC(8) Pause Young (Allocation Failure) 10M->6M(15M) 0.318ms
+[39.076s][info][gc] GC(9) Pause Young (Allocation Failure) 10M->6M(15M) 0.280ms
+[39.079s][info][gc] GC(10) Pause Young (Allocation Failure) 10M->6M(15M) 0.271ms
+[39.082s][info][gc] GC(11) Pause Young (Allocation Failure) 10M->6M(15M) 0.289ms
+[39.085s][info][gc] GC(12) Pause Young (Allocation Failure) 10M->6M(15M) 0.341ms
+[39.089s][info][gc] GC(13) Pause Young (Allocation Failure) 10M->6M(15M) 0.263ms
+[39.092s][info][gc] GC(14) Pause Young (Allocation Failure) 10M->6M(15M) 0.209ms
+[39.095s][info][gc] GC(15) Pause Young (Allocation Failure) 10M->6M(15M) 0.190ms
+[39.097s][info][gc] GC(16) Pause Young (Allocation Failure) 10M->6M(15M) 0.218ms
+[39.100s][info][gc] GC(17) Pause Young (Allocation Failure) 10M->6M(15M) 0.214ms
+[39.102s][info][gc] GC(18) Pause Young (Allocation Failure) 10M->6M(15M) 0.200ms
+[39.104s][info][gc] GC(19) Pause Young (Allocation Failure) 10M->6M(15M) 0.203ms
+[39.106s][info][gc] GC(20) Pause Young (Allocation Failure) 10M->6M(15M) 0.184ms
+[39.109s][info][gc] GC(21) Pause Young (Allocation Failure) 10M->6M(15M) 0.164ms
+[39.110s][info][gc] GC(22) Pause Young (Allocation Failure) 10M->6M(15M) 0.166ms
+[39.112s][info][gc] GC(23) Pause Young (Allocation Failure) 10M->6M(15M) 0.186ms
+[39.113s][info][gc] GC(24) Pause Young (Allocation Failure) 10M->6M(15M) 0.165ms
+[39.114s][info][gc] GC(25) Pause Young (Allocation Failure) 10M->6M(15M) 0.229ms
+[39.115s][info][gc] GC(26) Pause Young (Allocation Failure) 11M->6M(15M) 0.248ms
+[39.116s][info][gc] GC(27) Pause Young (Allocation Failure) 11M->6M(15M) 0.156ms
+[39.117s][info][gc] GC(28) Pause Young (Allocation Failure) 10M->6M(15M) 0.143ms
+[39.118s][info][gc] GC(29) Pause Young (Allocation Failure) 10M->6M(15M) 0.151ms
+[39.119s][info][gc] GC(30) Pause Young (Allocation Failure) 10M->6M(15M) 0.141ms
+[39.120s][info][gc] GC(31) Pause Young (Allocation Failure) 10M->6M(15M) 0.144ms
+[39.121s][info][gc] GC(32) Pause Young (Allocation Failure) 10M->6M(15M) 0.151ms
+[39.122s][info][gc] GC(33) Pause Young (Allocation Failure) 11M->6M(15M) 0.179ms
+[39.123s][info][gc] GC(34) Pause Young (Allocation Failure) 11M->6M(15M) 0.160ms
+[39.124s][info][gc] GC(35) Pause Young (Allocation Failure) 11M->6M(15M) 0.170ms
+[39.125s][info][gc] GC(36) Pause Young (Allocation Failure) 11M->6M(15M) 0.164ms
+[39.126s][info][gc] GC(37) Pause Young (Allocation Failure) 11M->6M(15M) 0.140ms
+[46.902s][info][gc] GC(38) Pause Young (Allocation Failure) 10M->7M(15M) 0.816ms
+[86.872s][info][gc] GC(39) Pause Young (Allocation Failure) 11M->7M(15M) 1.635ms
+[127.960s][info][gc] GC(40) Pause Young (Allocation Failure) 11M->7M(15M) 0.326ms
+[169.998s][info][gc] GC(41) Pause Young (Allocation Failure) 11M->7M(15M) 1.644ms
