@@ -34,7 +34,7 @@ class FoolTest {
                 .add("Игра FizzBuzz.")
                 .add("1")
                 .add("Fizz")
-                .add("Buzz\r\n");
+                .add("Buzz" + System.lineSeparator());
 
         String result = new String(appOutput.toString().getBytes(StandardCharsets.UTF_8), StandardCharsets.UTF_8);
 
