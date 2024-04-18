@@ -10,11 +10,11 @@ import static org.assertj.core.api.Assertions.*;
 class GeneratorTest {
 
     @Test
-    public void whenGenerateCorrectPhrase(){
+    public void whenGenerateCorrectPhrase() {
         Generator generator = new PhraseGenerator();
         String template = "I am a ${name}, Who are ${subject}?";
         Map<String, String> args = Map.of(
-                "name","Dmitriy",
+                "name", "Dmitriy",
                 "subject", "you"
         );
         String expected = "I am a Dmitriy, Who are you?";
@@ -23,11 +23,11 @@ class GeneratorTest {
     }
 
     @Test
-    public void whenTemplateHasOneKey(){
+    public void whenTemplateHasOneKey() {
         Generator generator = new PhraseGenerator();
         String template = "I am a ${name}";
         Map<String, String> args = Map.of(
-                "name","Dmitriy"
+                "name", "Dmitriy"
         );
         String expected = "I am a ${name}";
 
@@ -36,11 +36,11 @@ class GeneratorTest {
 
 
     @Test
-    public void whenValuesHasMoreThenOneWord(){
+    public void whenValuesHasMoreThenOneWord() {
         Generator generator = new PhraseGenerator();
         String template = "I am a ${name}, Who are ${subject}?";
         Map<String, String> args = Map.of(
-                "name","Ivanov Petr Stepanovich",
+                "name", "Ivanov Petr Stepanovich",
                 "subject", "you and I"
         );
         String expected = "I am a Ivanov Petr Stepanovich, Who are you and I?";
@@ -49,11 +49,11 @@ class GeneratorTest {
     }
 
     @Test
-    public void whenEmptyTemplateThenException(){
+    public void whenEmptyTemplateThenException() {
         Generator generator = new PhraseGenerator();
         String template = "";
         Map<String, String> args = Map.of(
-                "name","Dmitriy",
+                "name", "Dmitriy",
                 "subject", "you"
         );
 
@@ -63,7 +63,7 @@ class GeneratorTest {
     }
 
     @Test
-    public void whenEmptyArgsThenException(){
+    public void whenEmptyArgsThenException() {
         Generator generator = new PhraseGenerator();
         String template = "I am a ${name}, Who are ${subject}?";
         Map<String, String> args = new HashMap<>();
@@ -74,11 +74,11 @@ class GeneratorTest {
     }
 
     @Test
-    public void whenArgHasWrongKeysThenException(){
+    public void whenArgHasWrongKeysThenException() {
         Generator generator = new PhraseGenerator();
         String template = "I am a ${name}, Who are ${subject}? Am I ${role}?";
         Map<String, String> args = Map.of(
-                "name","Dmitriy",
+                "name", "Dmitriy",
                 "subject", "you"
         );
 
@@ -88,11 +88,11 @@ class GeneratorTest {
     }
 
     @Test
-    public void whenArgHasMoreKeysThenTemplate(){
+    public void whenArgHasMoreKeysThenTemplate() {
         Generator generator = new PhraseGenerator();
         String template = "I am a ${name}";
         Map<String, String> args = Map.of(
-                "name","Dmitriy",
+                "name", "Dmitriy",
                 "subject", "you",
                 "role", "author"
         );
