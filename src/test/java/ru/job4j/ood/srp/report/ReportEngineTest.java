@@ -30,4 +30,37 @@ public class ReportEngineTest {
                 .append(System.lineSeparator());
         assertThat(engine.generate(employee -> true)).isEqualTo(expected.toString());
     }
+
+    @Test
+    public void whenThreeEmployeesGenerated() {
+        MemoryStore store = new MemoryStore();
+        Calendar now = Calendar.getInstance();
+        Employee workerSmallSalary = new Employee("Ivan", now, now, 100);
+        Employee workerBigSalary = new Employee("Petr", now, now, 500);
+        Employee workerMiddleSalary = new Employee("Vova", now, now, 300);
+        DateTimeParser<Calendar> parser = new ReportDateTimeParser();
+        store.add(workerSmallSalary);
+        store.add(workerBigSalary);
+        store.add(workerMiddleSalary);
+        Report engine = new ReportEngine(store, parser);
+        StringBuilder expected = new StringBuilder()
+                .append("Name; Hired; Fired; Salary;")
+                .append(System.lineSeparator())
+                .append(workerSmallSalary.getName()).append(" ")
+                .append(parser.parse(workerSmallSalary.getHired())).append(" ")
+                .append(parser.parse(workerSmallSalary.getFired())).append(" ")
+                .append(workerSmallSalary.getSalary())
+                .append(System.lineSeparator())
+                .append(workerBigSalary.getName()).append(" ")
+                .append(parser.parse(workerBigSalary.getHired())).append(" ")
+                .append(parser.parse(workerBigSalary.getFired())).append(" ")
+                .append(workerBigSalary.getSalary())
+                .append(System.lineSeparator())
+                .append(workerMiddleSalary.getName()).append(" ")
+                .append(parser.parse(workerMiddleSalary.getHired())).append(" ")
+                .append(parser.parse(workerMiddleSalary.getFired())).append(" ")
+                .append(workerMiddleSalary.getSalary())
+                .append(System.lineSeparator());
+        assertThat(engine.generate(employee -> true)).isEqualTo(expected.toString());
+    }
 }

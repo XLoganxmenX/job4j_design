@@ -82,4 +82,38 @@ public class AccountingReportTest {
         assertThat(engine.generate(employee -> true)).isEqualTo(expected.toString());
     }
 
+    @Test
+    public void whenReportGeneratedWithUSDAndThreeEmployees() {
+        MemoryStore store = new MemoryStore();
+        Calendar now = Calendar.getInstance();
+        Employee workerBigSalary = new Employee("Ivan", now, now, 500);
+        Employee workerMiddleSalary = new Employee("Ivan", now, now, 500);
+        Employee workerSmallSalary = new Employee("Petr", now, now, 100);
+        DateTimeParser<Calendar> parser = new ReportDateTimeParser();
+        CurrencyConverter converter = new InMemoryCurrencyConverter();
+        store.add(workerBigSalary);
+        store.add(workerMiddleSalary);
+        store.add(workerSmallSalary);
+        Report engine = new AccountingReport(store, parser, converter, Currency.USD);
+        StringBuilder expected = new StringBuilder()
+                .append("Name; Hired; Fired; Salary;")
+                .append(System.lineSeparator())
+                .append(workerBigSalary.getName()).append(" ")
+                .append(parser.parse(workerBigSalary.getHired())).append(" ")
+                .append(parser.parse(workerBigSalary.getFired())).append(" ")
+                .append(converter.convert(Currency.RUB, workerBigSalary.getSalary(), Currency.USD))
+                .append(System.lineSeparator())
+                .append(workerMiddleSalary.getName()).append(" ")
+                .append(parser.parse(workerMiddleSalary.getHired())).append(" ")
+                .append(parser.parse(workerMiddleSalary.getFired())).append(" ")
+                .append(converter.convert(Currency.RUB, workerMiddleSalary.getSalary(), Currency.USD))
+                .append(System.lineSeparator())
+                .append(workerSmallSalary.getName()).append(" ")
+                .append(parser.parse(workerSmallSalary.getHired())).append(" ")
+                .append(parser.parse(workerSmallSalary.getFired())).append(" ")
+                .append(converter.convert(Currency.RUB, workerSmallSalary.getSalary(), Currency.USD))
+                .append(System.lineSeparator());
+        assertThat(engine.generate(employee -> true)).isEqualTo(expected.toString());
+    }
+
 }

@@ -81,4 +81,44 @@ class XmlReportTest {
         assertThat(engine.generate(employee -> true)).isEqualTo(expected.toString());
     }
 
+    @Test
+    public void whenGeneratedWithThreeEmployee() {
+        MemoryStore store = new MemoryStore();
+        Calendar now = Calendar.getInstance();
+        Employee workerSmallSalary = new Employee("Ivan", now, now, 100);
+        Employee workerMiddleSalary = new Employee("Vova", now, now, 300);
+        Employee workerBigSalary = new Employee("Petr", now, now, 500);
+        DateTimeParser<Calendar> parser = new ReportDateTimeParser();
+
+        store.add(workerSmallSalary);
+        store.add(workerMiddleSalary);
+        store.add(workerBigSalary);
+
+        Report engine = new XmlReport(store, marshaller);
+        StringBuilder expected = new StringBuilder()
+                .append("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>").append("\n")
+                .append("<employees>").append("\n")
+                .append("    <employee>").append("\n")
+                .append("        <fired>").append(parser.parse(workerSmallSalary.getFired())).append("</fired>\n")
+                .append("        <hired>").append(parser.parse(workerSmallSalary.getHired())).append("</hired>\n")
+                .append("        <name>").append(workerSmallSalary.getName()).append("</name>\n")
+                .append("        <salary>").append(workerSmallSalary.getSalary()).append("</salary>\n")
+                .append("    </employee>").append("\n")
+                .append("    <employee>").append("\n")
+                .append("        <fired>").append(parser.parse(workerMiddleSalary.getFired())).append("</fired>\n")
+                .append("        <hired>").append(parser.parse(workerMiddleSalary.getHired())).append("</hired>\n")
+                .append("        <name>").append(workerMiddleSalary.getName()).append("</name>\n")
+                .append("        <salary>").append(workerMiddleSalary.getSalary()).append("</salary>\n")
+                .append("    </employee>").append("\n")
+                .append("    <employee>").append("\n")
+                .append("        <fired>").append(parser.parse(workerBigSalary.getFired())).append("</fired>\n")
+                .append("        <hired>").append(parser.parse(workerBigSalary.getHired())).append("</hired>\n")
+                .append("        <name>").append(workerBigSalary.getName()).append("</name>\n")
+                .append("        <salary>").append(workerBigSalary.getSalary()).append("</salary>\n")
+                .append("    </employee>").append("\n")
+                .append("</employees>").append("\n");
+
+        assertThat(engine.generate(employee -> true)).isEqualTo(expected.toString());
+    }
+
 }
