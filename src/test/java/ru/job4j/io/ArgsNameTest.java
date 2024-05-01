@@ -80,10 +80,10 @@ class ArgsNameTest {
 
     @Test
     void whenThereNoEqualSignThenExceptionThrown2() {
-        assertThatThrownBy(() -> ArgsName.of(new String[]{"-Xmx=512", "-%)9750?*:940-468--?();¹__"}))
+        assertThatThrownBy(() -> ArgsName.of(new String[]{"-Xmx=512", "-%)9750?*:940-468--?();â„–__"}))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageMatching("^.+")
-                .hasMessageContaining("Error: This argument '-%)9750?*:940-468--?();¹__' does not contain an equal sign");
+                .hasMessageContaining("Error: This argument '-%)9750?*:940-468--?();â„–__' does not contain an equal sign");
     }
 
     @Test

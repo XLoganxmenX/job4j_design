@@ -8,7 +8,7 @@ import java.util.Map;
 
 import static org.assertj.core.api.Assertions.*;
 
-@Disabled("Тесты отключены")
+@Disabled("РўРµСЃС‚С‹ РѕС‚РєР»СЋС‡РµРЅС‹")
 class GeneratorTest {
 
     @Test
