@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
-@Disabled("Тесты отключены")
 class ParkingImplTest {
 
     @Test
@@ -20,13 +19,16 @@ class ParkingImplTest {
     }
 
     @Test
-    void whenParkVehicleThenAssignId() {
+    void whenParkVehiclesThenAssignId() {
         AbstractVehicle bmw = new PassengerVehicle("BMW V6");
+        Vehicle kamaz = new Truck("Kamaz", 4);
         Parking parking = new ParkingImpl(8, 8);
 
         parking.park(bmw);
+        parking.park(kamaz);
 
         assertThat(bmw.getId()).isEqualTo(1);
+        assertThat(kamaz.getId()).isEqualTo(2);
     }
 
     @Test
@@ -134,7 +136,7 @@ class ParkingImplTest {
         parking.park(gazel);
         parking.park(volvo);
 
-        assertThat(parking.getRemainBigPlaces()).isEqualTo(4);
+        assertThat(parking.getRemainBigPlaces()).isEqualTo(2);
         assertThat(parking.getRemainSmallPlaces()).isEqualTo(8);
     }
 

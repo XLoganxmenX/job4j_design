@@ -25,10 +25,12 @@ public abstract class AbstractVehicle implements Vehicle {
         this.model = model;
     }
 
+    @Override
     public int getId() {
         return id;
     }
 
+    @Override
     public void setId(int id) {
         this.id = id;
     }
@@ -41,6 +43,7 @@ public abstract class AbstractVehicle implements Vehicle {
         this.model = model;
     }
 
+    @Override
     public int getSize() {
         return size;
     }
