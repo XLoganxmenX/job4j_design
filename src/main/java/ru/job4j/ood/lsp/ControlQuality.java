@@ -25,7 +25,10 @@ public class ControlQuality {
                 }
             }
         }
+    }
 
+    public void resort() {
+        reDistribute(LocalDateTime.now());
     }
 
     private List<Food> collectFoodsFromAllStores() {

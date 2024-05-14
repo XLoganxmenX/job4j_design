@@ -179,4 +179,52 @@ class ControlQualityTest {
         assertThat(banana.getPrice()).isEqualTo(1.0F);
     }
 
+    @Test
+    void whenFoodsInStoresAndStartResort() {
+        Store thrash = new Thrash();
+        Store warehouse = new Warehouse();
+        Store shop = new Shop();
+        ControlQuality controlQuality = new ControlQuality(thrash, warehouse, shop);
+        LocalDateTime timeNow = LocalDateTime.now();
+        Food banana = new Fruit(
+                "Banana",
+                timeNow.minusMonths(12),
+                timeNow.minusMonths(6),
+                4.38F,
+                0,
+                List.of("Pulp")
+        );
+        Food apple = new Fruit(
+                "Apple",
+                timeNow.minusMonths(3),
+                timeNow.plusMonths(12),
+                2.40F,
+                0,
+                List.of("Pulp")
+        );
+        Food mandarin = new Fruit(
+                "Apple",
+                timeNow.minusMonths(12),
+                timeNow.plusMonths(12),
+                3.50F,
+                0,
+                List.of("Pulp")
+        );
+        shop.add(banana);
+        shop.add(apple);
+        warehouse.add(mandarin);
+
+        controlQuality.resort();
+
+        assertThat(thrash.findAll()).isNotEmpty()
+                .hasSize(1)
+                .containsExactly(banana);
+        assertThat(shop.findAll()).isNotEmpty()
+                .hasSize(1)
+                .containsExactly(mandarin);
+        assertThat(warehouse.findAll()).isNotEmpty()
+                .hasSize(1)
+                .containsExactly(apple);
+    }
+
 }
