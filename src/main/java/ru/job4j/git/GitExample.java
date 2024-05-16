@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 public class GitExample {
-    List<String> gitHub = new ArrayList<>();
-    Map<Integer, String> gitLab = new HashMap<>();
-    String commit;
+    private List<String> gitHub = new ArrayList<>();
+    private Map<Integer, String> gitLab = new HashMap<>();
+    private String commit;
 
     public GitExample(String commit) {
         this.commit = commit;
@@ -16,5 +16,9 @@ public class GitExample {
 
     public void push() {
         gitHub.add(commit);
+    }
+
+    public List<String> getAllCommits() {
+        return gitHub;
     }
 }
